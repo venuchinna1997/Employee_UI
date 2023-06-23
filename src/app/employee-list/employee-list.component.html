@@ -5,6 +5,7 @@
                 <th>Name</th>
                 <th>Email</th>
                 <th>Age</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -12,6 +13,9 @@
                 <td>{{ emp.name }}</td>
                 <td>{{ emp.email }}</td>
                 <td>{{ emp.age }}</td>
+                <td>
+                    <button (click)="updateEmployee(emp.id)">Update</button>
+                </td>
             </tr>
         </tbody>
     </table>
