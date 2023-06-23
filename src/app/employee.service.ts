@@ -10,6 +10,9 @@ export class EmployeeService {
 
   private baseUrl = "http://localhost:8081/api/v1/employees/";
 
+  private url = "http://localhost:8081/api/v1/employees/employee";
+
+
   constructor(private httpClient: HttpClient) { }
 
   getEmployeesList(): Observable<Employee[]>{
@@ -18,5 +21,13 @@ export class EmployeeService {
 
   createEmployee(employee: Employee): Observable<Object>{
     return this.httpClient.post(`${this.baseUrl}`, employee);
+  }
+
+  getEmployeeById(id: number): Observable<Employee>{
+    return this.httpClient.get<Employee>(`${this.url}/${id}`);
+  }
+
+  updateEmployee(id: number, employee: Employee): Observable<Object>{
+    return this.httpClient.put(`${this.url}/${id}`, employee);
   }
 }
