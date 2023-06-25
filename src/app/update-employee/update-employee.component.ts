@@ -27,10 +27,10 @@ export class UpdateEmployeeComponent implements OnInit{
   }
 
   onSubmit(){
-    this.employeeService.updateEmployee(this.id, this.employee).subscribe(data => {
+    this.employeeService.updateEmployee(this.id, this.employee).subscribe({next :(data) => {
          this.goToEmployeeList();
-    }, error => console.error(error));
-    
+    }, error: (error) => console.error(error)
+  }); 
   }
 
   goToEmployeeList(){

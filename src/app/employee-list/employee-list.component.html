@@ -14,7 +14,8 @@
                 <td>{{ emp.email }}</td>
                 <td>{{ emp.age }}</td>
                 <td>
-                    <button (click)="updateEmployee(emp.id)" class="btn btn-info">Update</button>
+                    <button (click)="updateEmployee(emp.id)" class="btn btn-info">Update</button>&nbsp;
+                    <button (click)="deleteEmployee(emp.id)" class="btn btn-danger" style="margin-left: 10px">Delete</button>
                 </td>
             </tr>
         </tbody>

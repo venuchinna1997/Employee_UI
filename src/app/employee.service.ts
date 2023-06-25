@@ -30,4 +30,8 @@ export class EmployeeService {
   updateEmployee(id: number, employee: Employee): Observable<Object>{
     return this.httpClient.put(`${this.url}/${id}`, employee);
   }
+
+  deleteEmployee(id: number): Observable<Object>{
+    return this.httpClient.delete<Employee>(`${this.url}/${id}`);
+  }
 }
